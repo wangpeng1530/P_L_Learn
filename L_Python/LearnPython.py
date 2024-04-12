@@ -344,3 +344,36 @@
 
 # def funcname(parameter_list):
 #     # pillow.
+
+import random  
+  
+# 定义牌的顺序  
+cards = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']  
+  
+def draw_card():  
+    return random.choice(cards)  
+  
+def compare_cards(card1, card2):  
+    # 如果两个卡片的值相同，返回0  
+    if card1 == card2:  
+        return 0  
+    # 如果卡片1的值大于卡片2，返回1  
+    elif card1 > card2:  
+        return 1  
+    # 否则卡片1的值小于卡片2，返回-1  
+    else:  
+        return -1  
+  
+def play_game():  
+    player_A = draw_card()  
+    player_B = draw_card()  
+    print(f"Player A drew {player_A}")  
+    print(f"Player B drew {player_B}")  
+    if compare_cards(player_A, player_B) > 0:  
+        print("Player A wins the game!")  
+    elif compare_cards(player_A, player_B) < 0:  
+        print("Player B wins the game!")  
+    else:  
+        print("It's a tie!")  
+  
+play_game()
